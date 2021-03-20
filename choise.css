@@ -1,0 +1,30 @@
+body{
+  margin: 0;
+}
+
+header{
+  height: 30px;
+  background: orange;
+}
+
+h1{
+  color: black;
+  background: #ffa500;
+  border: 5px solid #ff8c00;
+  margin: 5px 20px;
+  height: 15px;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+ul{
+  text-align: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+a{
+  text-decoration: none;
+    text-decoration:none;
+    color:black;
+}

@@ -1,0 +1,114 @@
+!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise2s.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="rekisie.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['世界恐慌が始まったのは何年？','1929'],
+        ['1933年にルーズベルトが行った政策は？','ニューディール政策'],
+        ['世界恐慌に対してイギリスやフランスがとった政策は？','ブロック経済'],
+        ['五か年計画を推進していたソ連の当時の指導者は？','スターリン'],
+        ['ドイツやイタリアなどでは民主主義を否定して個人よりも民族や国家を重視下政治運動は？」','ファシズム'],
+        ['イタリアでファシスト党を率いて1922年に政権を握って独裁政治をしたのは誰？','ムッソリーニ'],
+        ['ドイツで1933年に政権を握ったナチスの指導者は？','ヒトラー'],
+        ['関東大震災によって起こった恐慌は？','金融恐慌'],
+        ['1931年に日本軍が満鉄を爆破した事件は？','満州事変'],
+        ['満州国最後の皇帝は？','溥儀'],
+        ['犬養毅は1932年の何によって殺された？','五・一五事件'],
+        ['満州事変を調査したのは？','リットン調査団'],
+        ['1936年陸軍の青年将校が首相官邸や警視庁を襲撃する何事件が起きた？','二・二六事件'],
+        ['1937年に日中戦争とともに南京事件が起きた場所は？','盧溝橋'],
+        ['中国の国民党と共産党が日本に対抗するために結んだものは？','抗日民族統一戦線'],
+        ['国民党の指導者は？','蒋介石'],
+        ['共産党の指導者は？','毛沢東'],
+        ['1938年に制定された戦争に動員できる権限を政府に与える法は？','国家総動員法'],
+        ['1940年にはほとんどの政党や団体は解散し何に合流した？','大政翼賛会'],
+        ['日中戦争中に住民を相互に監視させる目的で10戸を単位とする何がつくられた？','隣組'],
+        ['朝鮮の人々を日本の人々に同化させる政策は？（1930年代）','皇民化'],
+        ['朝鮮では姓名の表し方を日本式に改めさせる何が行われた？','創氏改名'],
+        ['ナチスドイツはそれまで対立していたソ連と何を結びポーランドに侵攻した？(1939)','独ソ不可侵条約'],
+        ['ナチスドイツに宣戦布告した国はイギリスとどこ？','フランス'],
+        ['ドイツ、イタリア、日本で結んだ同盟は？(1940)','日独伊三国同盟'],
+        ['アメリカとイギリスで発表したファシズムに対する決意を示したものは？(1941)','大西洋憲章'],
+        ['ナチスドイツが迫害した人種は?','ユダヤ人'],
+        ['ドイツの占領地で起きたドイツに対する抵抗運動は？','レジスタンス'],
+        ['北方の安全を確保するためにソ連と結んだ条約は？(1941)','日ソ中立条約'],
+        ['東南アジアへの進出を正当化するために日本が唱えたものは？','大東亜共栄圏'],
+        ['ABCD包囲網(アメリカ、イギリス、中国、オランダ)で日本への輸出が禁止になったものは？(1941)','石油'],
+        ['日本はどこへ攻撃を仕掛けて太平洋戦争が始まった？(1941/12/8)','真珠湾'],
+        ['第二次世界大戦において日本、ドイツ、イタリアなどは何国と呼ばれた？','枢軸国'],
+        ['文系の大学生が軍隊に召集されたのは？(1943)','学徒出陣'],
+        ['小学生たちが空襲から逃れるために行ったことは？','集団疎開'],
+        ['1945/3/10日に東京に向けて行われたものは？','東京大空襲'],
+        ['アメリカが上陸し激しい戦闘がおこなわれた県は？','沖縄県'],
+        ['',''],
+        ['',''],
+        ['',''],
+        ['',''],
+        ['',''],
+      ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 20){
+          replay.textContent = "replay";
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

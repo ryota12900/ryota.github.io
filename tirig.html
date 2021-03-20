@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise1s.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="tirig.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['北海道はかつて蝦夷地と呼ばれていたがそこに住んでいた先住民は？','アイヌ'],
+        ['明治政府は現在の札幌市に何という役所を置いて開拓を進めた？','開拓使'],
+        ['蝦夷地は各地から移住者や北方の警備などを兼ねた誰による開拓がされた？','屯田兵'],
+        ['1997年に作られたアイヌの民族の文化の保護と振興を目的とした法律は？','アイヌ文化振興法'],
+        ['屯田兵はどこの国からの攻撃に備えていた？','ロシア'],
+        ['北海道西部に広がる平野は？','石狩平野'],
+        ['北海道南東部に広がる平野は？','十勝平野'],
+        ['北海道東部に広がる台地は？','根釧台地'],
+        ['北海道西部に流れる川は？','石狩川'],
+        ['北海道南部に連なる山脈は？','日高山脈'],
+        ['世界遺産に登録されている半島は？','知床半島'],
+        ['北海道中央部の盆地は？','上川盆地'],
+        ['北海道北部に連なる山脈は？','北見山地'],
+        ['北海道の面積は日本の面積の何割をしめている？','2'],
+        ['国後島、歯舞群島、択捉島、色丹島は日本固有の領土であるが現在ロシアが占拠している四島をまとめて何という？','北方領土'],
+        ['オホーツク海沿岸で冬に見られるものは？','流氷'],
+        ['毎年二月に札幌市で行われる祭りは？','札幌雪祭り'],
+        ['ラムサール条約に登録されている北海道東部にある湿原の名前は？','根釧湿原'],
+        ['北海道には何州からの外国人観光局が多い？','アジア州'],
+        ['2000年に噴火した有球山周辺には大地の移り変わりが分かりやすいことからユネスコによって何に登録された？','ジオパーク'],
+        ['北海道の気候帯は？','冷帯'],
+        ['北海道には6～7月の何がない？','梅雨'],
+        ['北海道の太平洋側では夏の季節風が寒流である親潮の影響で冷やされて何が発生する？','濃霧'],
+        ['道路の中に電熱線や温水パイプを通してその中で雪を解かす設備は？','ロードヒーティング'],
+        ['北海道は農作物が生産される北海道は、日本の何基地と呼ばれている？','食料基地'],
+        ['石狩平野はかつては枯れた植物が炭化したなにが多かった？','泥炭地'],
+        ['十勝平野では土地の栄養素を落とさないために何が行われている？','輪作'],
+        ['北海道の畑農家は広大な土地を大型機械を用いて大規模に行っている何農家？','主業農家'],
+        ['需要な砂糖の原料で北海道の生産がほぼ100%を占めている作物は？','てんさい'],
+        ['16世紀後半に伝わった北海道（主に十勝平野）で生産が盛んな野菜は？','じゃがいも'],
+        ['根釧台地では夏も涼しいことを生かして何が盛ん？','酪農'],
+        ['北海道で生産された牛乳の八割は何に使われる？','加工用'],
+        ['石狩平野で生産が盛んな作物は？','米'],
+        ['北海道ではサケなどの何が盛ん？','栽培漁業'],
+        ['北海道内で最も漁獲量が多い漁港は？','釧路'],
+        ['かつて北海道は何漁業で栄えた？','北洋漁業'],
+        ['北海道において工業生産額が最も大きい工業は？','食料品工業'],
+        ['北海道でかつて採掘が盛んだった鉱物は？','石炭'],
+      ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 20){
+          replay.textContent = "replay";
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

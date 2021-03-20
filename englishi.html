@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>英語</title>
+    <link rel="stylesheet" href="english.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body>
+    <div id="back">
+      <a href="choise1e.html"><span class="material-icons">
+        keyboard_backspace
+        </span></a>
+    </div>
+    <div class="quiz">
+      <div id="set">
+        <p id="question"></p>
+        <p id="target" class ="question"></p>
+      </div>
+      <a href="englishi.html"><p id="result"></p></a>
+    </div>
+
+    <script>
+      'use strict';
+
+{
+  function setWord(){
+    word = words[many][0];
+    target.textContent = word;
+    loc = 0;
+  }
+  
+  function setQuiz(){
+    quiz = words[many][1];
+    question.textContent = quiz;
+    many ++;
+  }
+  const words = [
+  ['west','西'],
+  ['country','国'],
+  ['Japan','日本'],
+  ['America','アメリカ'],
+  ['China','中国'],
+  ['India','インド'],
+  ['city','市、都会'],
+  ['church','教会'],
+  ['town','街、町'],
+  ['village','町、村'],
+　['station','駅'],
+  ['place','場所'],
+  ['wall','壁'],
+  ['gate','門'],
+  ['yard','中庭'],
+  ['field','野原、競技場'],
+　['bank','銀行'],
+  ['library','図書館'],
+  ['hospital','病院'],
+  ['hotel','ホテル'],
+]
+
+let word;
+let quiz;
+let loc = 0;
+let many = 0;
+
+  const target = document.getElementById('target');
+
+  setWord();
+
+  const question = document.getElementById('question')
+
+  setQuiz();
+
+
+
+  document.addEventListener('keydown', e => {
+    if(e.key !== word[loc]){
+      return;
+    }
+
+    loc++;
+    target.textContent = '_'.repeat(loc) + word.substring(loc);
+    
+    if(loc === word.length){
+      if(many === words.length){
+        const result = document.getElementById('result')
+        result.textContent = 'Replay?'
+        return;
+      }
+    }
+    
+    if(loc === word.length){
+      setWord();
+      setQuiz();
+    }
+  });
+}
+    </script>
+  </body>
+</html>

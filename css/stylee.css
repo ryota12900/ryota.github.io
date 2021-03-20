@@ -1,0 +1,30 @@
+
+#correct{
+  display: none;
+}
+
+#question{
+  font-size: 24px;
+  border-bottom: solid 3px black;
+}
+
+#answer{
+  font-size: 30px;
+  width: 500px;
+  height: 150px;
+}
+
+#btn{
+  width: 100px;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+#main{
+  text-align: center;
+}
+
+a{
+  list-style: none;
+  color: black;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise2r.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="rika2all.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['口の消化器官の唾液腺に含まれる消化酵素は？','アミラーゼ'],
+        ['アミラーゼによって分解されるものは？','デンプン'],
+        ['胃に含まれる消化酵素は？','ペプシン'],
+        ['ペプシンによって分解されるものは？','タンパク質'],
+        ['胆のうによる胆汁は何の分解を助ける？','脂肪'],
+        ['リパーゼは何を分解している？','デンプンとタンパク質と脂肪'],
+        ['小腸の壁の消化酵素は何を分解している？','デンプンとタンパク質'],
+        ['ブドウ糖とアミノ酸は小腸の柔毛の何に吸収される？','毛細血管'],
+        ['脂肪は脂肪酸と何に分解される？','モノグリセリド'],
+        ['脂肪酸とモノグリセリドは小腸の柔毛の何に吸収される？','リンパ管'],
+        ['糖を調べる薬品は？','ベネジクト液'],
+        ['ベネジクト液は何色から何色に変わる？','青から赤褐色'],
+        ['タンパク質は最終的に何に分解される？','アミノ酸'],
+        ['すい液にはアミラーゼとリパーゼのほかに何が含まれている？','トリプシン'],
+        ['胆汁を作ったり、栄養を蓄えたり、有害なものを無害に変える器官は？','肝臓'],
+        ['消化管が長い動物は？','草食動物'],
+        ['デンプンが分解される順番は？','麦芽糖からブドウ糖'],
+      ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 10){
+          replay.textContent = "replay";
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

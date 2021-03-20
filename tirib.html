@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise1s.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="tirib.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['中国地方にまたがる山地は？','中国山地'],
+        ['四国地方にまたがる山地は？','四国山地'],
+        ['中国地方と四国地方の間の海は？','瀬戸内海'],
+        ['香川県北部の平野は？','讃岐平野'],
+        ['徳島県に流れる代表的な川は？','吉野川'],
+        ['中国山地より北の地域は？','山陰'],
+        ['中国山地より南の地域は？','山陽'],
+        ['瀬戸内海に面している地域は？','瀬戸内'],
+        ['四国山地より南の地域は？','南四国'],
+        ['瀬戸内は（　）の影響を受けにくいため年中雨が少なく温暖だ','季節風'],
+        ['讃岐平野でかつて農業用水を確保するために作られた物は？','ため池'],
+        ['坂出や鳴門などの沿岸にはかつて雨の少ない気候と潮の干ばつを生かして作られるものは？','塩田'],
+        ['愛媛県の県庁所在地は？','松山市'],
+        ['香川県の県庁所在地は？','高松市'],
+        ['鳥取県の県庁所在地は？','松江市'],
+        ['島根県にある世界遺産は？','石見銀山'],
+        ['広島県の世界遺産（神社）は？','厳島神社'],
+        ['広島県の原爆に関する世界遺産は？','原爆ドーム'],
+        ['高知平野で盛んなビニールハウスを使った栽培は？','促成栽培'],
+        ['高知平野で生産が盛んな野菜は？　（な　）と（ピ　）と（き　）','なすとピーマンときゅうり'],
+        ['岡山県で栽培が盛んな果物は？','ぶどう'],
+        ['水がしみこみやすくらっきょうやメロンの栽培が盛んな場所は？','鳥取砂丘'],
+        ['段々畑を用いてみかんを生産をし全国3位の県は？','愛媛県'],
+        ['瀬戸内海は波が静かなため養殖漁業に適しており広島では（　）の養殖が盛ん？','かき'],
+        ['海上交通の便がよく石油化学や鉄鋼が盛んな工業地域は？','瀬戸内工業地域'],
+        ['石油化学の大規模な工場群は？','石油化学コンビナート'],
+        ['広島市のように政治・経済・文化・の中心になっている都市は？','地方中枢都市'],
+        ['原子爆弾が投下されたのはいつ？','1945年8月6日'],
+        ['広島市は何という都市として世界に平和を訴えているか？','平和記念都市'],
+        ['広島市は戦国時代に何氏の城下町として栄えた？','毛利氏'],
+        ['山陰と南四国では何が問題になっている？','過疎化'],
+        ['人口の半数以上を65歳以上が占めている集落は？','限界集落'],
+        ['1990年後半から行政の効率化をはかるために市町村の規模を大きくするために行われたことは？','市町村合併'],
+        ['ゲゲゲの鬼太郎を使って町おこしをしている境港市は何県にある？','鳥取県'],
+        ['傾斜地につくられた田を？','棚田'],
+        ['料理に「いろどり」を添える素材を料亭などに販売している、上勝町があるのは何県？','徳島県'],
+        ['廃校となった校舎を高齢者の介護施設にすることで働く場所を提供している四万十町があるのは何県？','高知県'],
+        ['山間部の6県を合併させ収入、支出を安定させた雲南市があるのは何県？','島根県'],
+        ['本州と四国を結ぶ3つの橋をまとめてなんという？','本州四国連絡橋'],
+        ['1988年に開通した岡山県の倉敷市児島と香川県の坂出を結ぶ児島・坂出ルートは何橋？','瀬戸大橋'],
+        ['神戸市と淡路島を結ぶのは？','明石海峡大橋'],
+        ['淡路島と徳島県鳴門市を結ぶのは何橋？','大鳴門橋'],
+        ['広島県尾道市と愛媛県今治市を結ぶ尾・今治ルートは何橋？','しまなみ海道'],
+        ['1991年にできた島根県浜田市と広島県広島市を結ぶ自動車動は？','浜田自動車道'],
+      ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 20){
+          replay.textContent = "replay";
+          return;
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

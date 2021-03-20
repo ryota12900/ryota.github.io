@@ -1,0 +1,34 @@
+body {
+  padding-top: 50px;
+  text-align: center;
+  margin: 5px;
+}
+
+#target {
+  font-size: 48px;
+  letter-spacing: .1em;
+}
+
+#question{
+  font-size: 48px;
+  border-bottom: 5px solid red;
+  margin-top: 0;
+}
+
+#set{
+  border: 5px solid red;
+}
+
+a{
+text-decoration:none;
+color:black;
+}
+
+#result{
+  font-size: 30px;
+}
+
+#back{
+  font-size: px;
+  padding-right:600px;
+}

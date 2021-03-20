@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>英語</title>
+    <link rel="stylesheet" href="english.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body>
+    <div id="back">
+      <a href="choise1e.html"><span class="material-icons">
+        keyboard_backspace
+        </span></a>
+    </div>
+    <div class="quiz">
+      <div id="set">
+        <p id="question"></p>
+        <p id="target" class ="question"></p>
+      </div>
+      <a href="englishh.html"><p id="result"></p></a>
+    </div>
+
+    <script>
+      'use strict';
+
+{
+  function setWord(){
+    word = words[many][0];
+    target.textContent = word;
+    loc = 0;
+  }
+  
+  function setQuiz(){
+    quiz = words[many][1];
+    question.textContent = quiz;
+    many ++;
+  }
+  const words = [
+  ['woman','女の人'],
+  ['man','男の人'],
+  ['aunt','叔母'],
+  ['uncle','叔父'],
+  ['citizen','市民'],
+  ['nurse','看護婦'],
+  ['doctor','医者'],
+  ['pilot','パイロット'],
+  ['cook','料理人'],
+  ['singer','歌手'],
+　['clerk','店員'],
+  ['student','学生'],
+  ['teacher','先生'],
+  ['player','選手'],
+  ['way','道、方法'],
+  ['right','右'],
+　['left','左'],
+  ['north','北'],
+  ['south','南'],
+  ['east','東'],
+]
+
+let word;
+let quiz;
+let loc = 0;
+let many = 0;
+
+  const target = document.getElementById('target');
+
+  setWord();
+
+  const question = document.getElementById('question')
+
+  setQuiz();
+
+
+
+  document.addEventListener('keydown', e => {
+    if(e.key !== word[loc]){
+      return;
+    }
+
+    loc++;
+    target.textContent = '_'.repeat(loc) + word.substring(loc);
+    
+    if(loc === word.length){
+      if(many === words.length){
+        const result = document.getElementById('result')
+        result.textContent = 'Replay?'
+        return;
+      }
+    }
+    
+    if(loc === word.length){
+      setWord();
+      setQuiz();
+    }
+  });
+}
+    </script>
+  </body>
+</html>

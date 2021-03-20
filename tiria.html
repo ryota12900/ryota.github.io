@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise1s.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="tiria.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['1910年頃八幡製鉄所付近の筑豊炭田で盛んに採掘されていた鉱物は?','石炭'],
+        ['有明海から古くから行われてきた土地の造成方法は？','干拓'],
+        ['世界最大級のカルデラを持つ阿蘇山が火山活動を続けている県は？','熊本県'],
+        ['農業生産額、畜産生産額、九州一の県は？','鹿児島県'],
+        ['畜産生産額九州2位の県は？','宮崎県'],
+        ['火山を生かした九州地方に多い発電所は？','地熱発電所'],
+        ['宮崎平野で行われている栽培方法は？','促成栽培'],
+        ['鹿児島県など九州南部の火山灰が降り積もった水持ちの悪い土地は？','シラス台地'],
+        ['鹿児島県にある代表的な火山は？','桜島'],
+        ['長崎県にあるかつて噴火したことのある代表的な山は？','雲仙岳'],
+        ['佐賀県から福岡県にかけて広がる平野は？','筑紫平野'],
+        ['有明海から福岡県へ流れている川は？','筑後川'],
+        ['1993年に世界自然遺産に登録された島は？','屋久島'],
+        ['対象となる地域の自然環境の保全に責任をもつ観光のことを？','エコツーリズム'],
+        ['九州地方の太平洋側に流れている暖流は？','黒潮'],
+        ['九州地方の東シナ海側に流れている暖流は？','対馬海流'],
+        ['沖縄を含む南西諸島の気候は？','亜熱帯'],
+        ['沖縄の家は何に備えられたつくりになっている？','台風'],
+        ['九州地方の多くは水がしみこみやすいため、雨が続くとどんな災害が起こる？','土砂崩れ'],
+        ['土砂や木の流出を防ぐために何が建てられている？','砂防ダム'],
+        ['2011年には博多駅と鹿児島駅を結ぶ何が開通した？','九州新幹線'],
+        ['沖縄の島の周りには石灰質でできた何という海底地形が広がっている？','サンゴ礁'],
+        ['沖縄は日本の一部になる前には何という国だった？','琉球王国'],
+        ['太平洋戦争後沖縄は1972年に何から返還された？','アメリカ'],
+        ['筑紫平野では温暖な気候をいかして米とは違った作物を育てる何が盛ん？','二毛作'],
+        ['シラス台地では畜産と何が盛ん？','畑作'],
+        ['サツマイモの生産量が日本一位、茶の生産量が日本二位の県は？','鹿児島県'],
+        ['肉用若鶏（ブロイラー）の畜産量日本一の県は？','宮崎県'],
+        ['宮崎平野で生産が盛んな野菜は？（き　）と（ピ　）','きゅうりとピーマン'],
+        ['ビニールハウスや温室などの施設を使って行う農業は？','施設園芸農業'],
+        ['沖縄で生産が盛んな農作物は？（さ　）と（パ　）','さとうきびとパイナップル'],
+        ['九州地方で漁獲高が高い県は？','長崎県'],
+        ['明治時代に（　）が建てられ北九州工業地帯が発展した','八幡製鉄所'],
+        ['八幡製鉄所はどこから鉄を輸入していた？','中国'],
+        ['エネルギー革命とはエネルギー源が何から何に変わったことか？','石油から石炭'],
+        ['北九州工業地帯では産業の中心が鉄鋼業から何に変わった？','機械工業'],
+        ['九州地方では空港沿いで何工業が発展した？','IC工業'],
+        ['九州地方ではIC工業が多いことから何と呼ばれていた？','シリコンアイランド'],
+        ['苅田市や宮若市では何が発展した？','自動車工業'],
+        ['熊本県で起こった代表的な公害病は？','水俣病'],
+        ['水俣病は何によって引き起こされた？','メチル水銀'],
+        ['2008年に北九州市は何に登録された？','環境モデル都市'],
+        ['リサイクル工場を集めた地域は何と呼ばれる？','エコタウン'],
+        ['福岡市では大雨が降ると洪水が起こりやすいが何で対策している？','貯水施設'],
+      ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 20){
+          replay.textContent = "replay";
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

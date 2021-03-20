@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise1s.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="tirid.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['日本アルプスの中で北の山脈は？','飛騨山脈'],
+        ['日本アルプスの中で中心の山脈は？','木曽山脈'],
+        ['日本アルプスの中で南の山脈は？','赤石山脈'],
+        ['新潟県と静岡県を結ぶ帯状の窪地は？','フォッサマグナ'],
+        ['長野県から新潟県へ流れる日本で一番長い川は？','信濃川'],
+        ['信濃川と阿賀野川下流の三角州にできた平野は？','越後平野'],
+        ['愛知県と岐阜県にまたがる平野は？','濃尾平野'],
+        ['山梨県の代表的な盆地は？','甲府盆地'],
+        ['愛知県の代表できな半島は？','渥美半島'],
+        ['中部地方で広い平野にめぐまれ人口密度が高い太平洋側の地方は？','東海'],
+        ['中部地方で険しい山が広がり夏は涼しく冬は寒さが厳しい地方は？','中央高地'],
+        ['中部地方で世界有数の豪雪地帯である日本海側の地方は？','北陸'],
+        ['東海に含まれている中部地方以外の県は？','三重県'],
+        ['名古屋を中心に広がっている都市圏は？','名古屋大都市圏'],
+        ['名古屋市は都道府県に代わって福祉や行政を行うことを指定された都市であるこの都市のことを？','政令指定都市'],
+        ['ぶどうと桃の生産量日本一の県は？','山梨県'],
+        ['レタスの生産量日本一位ぶどうの生産量日本二位、桃の生産量日本三位の県は？','長野県'],
+        ['中央高地で生産が盛んな果物は？（ぶ　）と（も　）と（り　）','ぶどうとももとりんご'],
+        ['昔甲府盆地で盛んだった産業は？','養蚕業'],
+        ['ぶどう狩りなどができる農園を何という？','観光農園'],
+        ['標高1000mを超える高地ではキャベツやレタスなどの（　）の（　）を行っている','高原野菜、抑制栽培'],
+        ['静岡県牧ノ原台地などで生産しが日本一の生産量を誇っているものは？','茶'],
+        ['渥美半島では施設園芸農業がおこなわれているがそこで栽培されている物は？','電照菊'],
+        ['渥美半島のかんがい用に1968年に完成したものは？','豊川用水'],
+        ['家や農地を洪水の被害から守るため村の外側を堤防で囲んでいた土地を？','輪中'],
+        ['北陸は日本有数の（　）地帯である','単作'],
+        ['稲作に工夫を重ねた結果魚沼産コシヒカリのように（　）ができた','銘柄米'],
+        ['富山平野では気温が高くなることを生かして秋の早い時期に米を出荷する（　）の産地として有名','早場米'],
+        ['自動車などの機械工業の割合が高く工業製品出荷額日本一の工業地帯は？','中京工業地帯'],
+        ['自動車工業が盛んになった中京工業地帯の都市名は？','豊田市'],
+        ['豊田市付近では部品を作る（　）や下請け工場が進出している','関連工場'],
+        ['静岡県南部に広がる工業地域は？','東海工業地域'],
+        ['オートバイや楽器の生産が盛んな工業都市は？','浜松市'],
+        ['富山県で盛んな発電方法は？','水力発電'],
+        ['福岡県の若狭湾に多い発電所は？','原子力発電所'],
+        ['地域の特色を生かした産業は？','地場産業'],
+        ['福井県鯖江市で全国生産の約9割を占めているものは？','眼鏡フレーム'],
+        ['新潟県の燕市で盛んにつくられているものは？','洋食器'],
+      ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 20){
+          replay.textContent = "replay";
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

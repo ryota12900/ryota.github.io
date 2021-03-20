@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise1s.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="tirif.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['秋田県と岩手県の県境に連なる山脈は？','奥羽山脈'],
+        ['秋田県に連なる山脈は？','出羽山脈'],
+        ['岩手県の代表的な高地は？','北上高地'],
+        ['秋田県と青森県の県境にある世界遺産に登録された山地は？','白神山地'],
+        ['白神山地の何が世界自然遺産に登録されている？','ブナの原生林'],
+        ['東北地方で2011年に起きた震災は？','東日本大震災'],
+        ['山形県北部に広がる平野は？','庄内平野'],
+        ['宮城県東部に広がる平野は？','仙台平野'],
+        ['岩手県中央部から宮城県東部に流れる川は？','北上川'],
+        ['山形県北部から流れる川は？','最上川'],
+        ['東北地方に夏に北東から吹く冷たく湿った風は？','やませ'],
+        ['やませによって稲作などに影響を与える害は？','冷害'],
+        ['岩手県の県庁所在地は？','盛岡市'],
+        ['2011年に世界文化遺産に登録された平泉がある県は？','岩手県'],
+        ['東北地方では全国の米の生産量の四分の一を占めているがその中でも一番生産量が多い県は？','秋田県'],
+        ['大都市への供給地である東北地方は何地帯とばれている？','穀倉地帯'],
+        ['1970年以降政府が米の生産量を調節するためにとった政策は？','減反政策'],
+        ['美味しい銘柄米は何によってつくられた？','品種改良'],
+        ['青森県でりんごの生産が盛んな平野は？','津軽平野'],
+        ['三陸海岸の沖合は暖流の黒潮と寒流の親潮はぶつかり魚が多く集まる場所となっているこのような場所を？','潮目'],
+        ['三陸海岸はリアス海岸になっている、ここでは昆布・わかめ・牡蠣などの何が盛ん？','養殖漁業'],
+        ['青森の代表的な祭りは？','青森ねぶた祭'],
+        ['秋田の代表的な祭りは？','秋田竿燈まつり'],
+        ['宮城の代表的な祭りは？','仙台七夕まつり'],
+        ['東北の祭りは何を祈っている？','豊作'],
+        ['岩手県でつくられる伝統的工芸品は(鉄器）？','南部鉄器'],
+        ['青森県でつくられる伝統的工芸品は？','津軽塗'],
+        ['福島県でつくられる伝統的工芸品は？','会津塗'],
+        ['山形県でつくられる伝統的工芸品は？','天童将棋駒'],
+        ['岩手県でつくられる伝統的工芸品は（細工）？','樺細工'],
+        ['出かせぎ者の働き場所の工業団地は何の付近につくられた？','高速道路'],
+        ['東北地方と関東地方を結ぶ高速道路は？','東北自動車道'],
+        ['近年東北地方に進出している工場は？','自動車工場'],
+      ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 20){
+          replay.textContent = "replay";
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise1s.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="tirie.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['関東平野に広がっている赤土の名前は？','関東ローム'],
+        ['関東地方の半分を（　）が占める','関東平野'],
+        ['関東地方に流れている日本で一番流域面積が広い川は？','利根川'],
+        ['神奈川県から群馬県に連なる山脈は？','関東山地'],
+        ['千葉県の代表的な半島は？','房総半島'],
+        ['茨城県の代表的な湖は？','霞ヶ浦'],
+        ['神奈川県の代表的な半島は？','三浦半島'],
+        ['群馬県北部に連なる山脈は？','越後山脈'],
+        ['群馬県の代表的な山は？','浅間山'],
+        ['関東地方の代表的な諸島は？（２つ','伊豆諸島、小笠原諸島'],
+        ['神奈川県の県庁所在地は？','横浜市'],
+        ['埼玉県の県庁所在地はは？','さいたま市'],
+        ['茨城県の県庁所在地はは？','水戸市'],
+        ['栃木県の県庁所在地はは？','宇都宮市'],
+        ['群馬県の県庁所在地はは？','前橋市'],
+        ['関東地方で冬に吹く乾燥した冷たい北西から吹く季節風は？','からっ風'],
+        ['関東地方の大部分は（　）の気候で冬には（　）の日が多い','太平洋側、晴れ'],
+        ['沿岸部では（　）の影響で０℃を下回ることはほとんどない','黒潮'],
+        ['都市部の気温が周辺部より高くなる現象は？','ヒートアイランド現象'],
+        ['国の政治の中心になる都市は？','首都'],
+        ['各国の（　）のほとんどが東京に集中している','大使館'],
+        ['大都市において東京駅周辺などを何という？','都心'],
+        ['都心を支える新宿、渋谷などの都市は？','副都心'],
+        ['都心の一部を開発しなおすことを何という？','再開発'],
+        ['関東地方の人口は日本の人口の何分の一？','3'],
+        ['東京を中心に広がる都市圏は？','東京大都市圏'],
+        ['神奈川県には横浜市、川崎市、相模原市の３都市があるこれらのことを？','政令指定都市'],
+        ['都心は昼間人口と夜間人口どちらが多い？','昼間人口'],
+        ['新宿などのターミナル駅では何によって混雑が起きている？','ラッシュアワー'],
+        ['横浜市で造船場であった場所では再開発された地区は？','横浜みなとみらい21'],
+        ['埼玉に作られた新しい都市は？','さいたま新都心'],
+        ['茨城県に建設され大学や研究機関が移転した地区は？','筑波研究学園都市'],
+        ['都心の人口が減少しニュータウンに人口が増加する何が起こった？','ドーナツ化'],
+        ['千葉県に作られた新しい都市は？','幕張新都心'],
+        ['関東ロームでは（　）が盛ん？','畑作'],
+        ['利根川などの流域の低地では何が盛ん？','水田'],
+        ['関東地方は野菜生産額日本何位？','一位'],
+        ['関東地方では近郊農業を行い保冷トラックなどを使って輸送する何が盛ん？','輸送園芸農業'],
+        ['キャベツ生産額日本一位の県は？','群馬県'],
+        ['白菜生産額日本一位の県は？','茨城県'],
+        ['ねぎ生産額日本一位の県は？','千葉県'],
+        ['重化学工業や機械工業の他印刷業も盛んな工業地帯は？','京浜工業地帯'],
+        ['1960年以降東京湾の千葉県側を埋め立ててできた工業地域は？','京葉工業地域'],
+        ['近年電気機械や自動車などの生産が盛んになった北関東の工業地域は？','北関東工業地域'],
+        ['繊維工業が盛んであった世界遺産に登録された官営工場は？','富岡製糸場'],
+        ['北関東地方で働いている人が多い国名は？','ブラジル'],
+        ['港湾別貿易額が日本一の空港は？','成田国際空港'],
+        ['国内線の中心であるがアジアにも進出している空港は？','東京国際空港']
+      ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 20){
+          replay.textContent = "replay";
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

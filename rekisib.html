@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise2s.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="rekisib.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['ナウマンゾウやマンモスの化石が見つかった長野県の遺跡は？','野尻湖'],
+        ['1946年に群馬県のどこで打製石器が見つかった？','岩宿遺跡'],
+        ['1万2000年前に縄文時代に使われていた土器は？','縄文土器'],
+        ['縄文時代の人々が住んでいたものは？','たて穴住居'],
+        ['縄文時代に海岸や水辺にできた食べ物の残りかすなどを捨てた場所の後は？','貝塚'],
+        ['狩りをするために縄文時代に使われ始めた道具は？','弓と矢'],
+        ['青森県で見つかった約5500～4000年前ごろの遺跡は？','三内丸山遺跡'],
+        ['縄文時代の遺跡からは粘土でつくられた女性をかたどった人形は？','土偶'],
+        ['紀元前4世紀ごろには朝鮮半島から何が伝わった？','稲作'],
+        ['ネズミや湿気から米を守るために何がつくられた？','高床倉庫'],
+        ['弥生時代には稲を収穫するときに、穂を刈り取るために何が使われた？','石包丁'],
+        ['祭りのために使われた青銅器の中で代表的なものは？','銅鐸'],
+        ['弥生時代を代表する佐賀県で発見された遺跡は？','吉野ケ里遺跡'],
+        ['57年に何の王が中国の後漢に使いを送った？','奴国'],
+        ['九州北部にあったとされる奴国の王には何が贈られた？','金印'],
+        ['3世紀ごろ卑弥呼が治めてたとされる国は？','邪馬台国'],
+        ['魏に王として認めてもらうために使いを送った卑弥呼は金印と何を授けられた？','銅鏡'],
+        ['',''],
+        ['',''],
+        ['',''],
+        ['',''],
+        ['',''],
+        ['',''],
+        ['',''],
+        ['',''],
+        ['',''],
+        ['',''],
+      ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 20){
+          replay.textContent = "replay";
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

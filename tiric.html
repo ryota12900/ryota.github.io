@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise1s.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="tiric.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['日本一面積の広い湖は？','琵琶湖'],
+        ['瀬田川は何川となり大阪湾に注いでいる？','淀川'],
+        ['琵琶湖で問題になっている水質汚染は？','赤潮'],
+        ['三重から奈良にかけて連なる多雨地帯の山地は？','紀伊山地'],
+        ['紀伊山地でさかんっだった産業は？','林業'],
+        ['紀伊山地でつくられる有名な木は（す　）と（ひ　）','すぎとひのき'],
+        ['京都、福井付近の湾は？','若狭湾'],
+        ['三重県の代表的な半島は？','志摩半島'],
+        ['大阪に広がる代表的な平野は？','大阪平野'],
+        ['兵庫県の代表的な島は？','淡路島'],
+        ['京都府の代表的な高地は？','丹波高地'],
+        ['京都府の代表的な盆地は？','京都盆地'],
+        ['奈良県の代表的な盆地は？','奈良盆地'],
+        ['滋賀県の県庁所在地は？','大津市'],
+        ['三重県の県庁所在地は？','津市'],
+        ['京都府で栽培されている九条ネギや賀茂なすなどの伝統野菜を何という？','京野菜'],
+        ['温暖なことと山の斜面を生かしてみかんや梅の生産量日本一の県は？','和歌山県'],
+        ['志摩半島の英虞湾ではなんの養殖が盛ん？','真珠'],
+        ['大阪を中心として戦前から繊維工業が盛んで、中ではロケット部品などのハイテク産業にもかかわる中小企業もある工業地帯は？','阪神工業地帯'],
+        ['江戸時代には天下の（　）と呼ばれた','台所'],
+        ['神戸市を中心に広がる大都市圏を何という？','大阪大都市圏'],
+        ['江戸時代末期に貿易都市として開かれた日本有数の貿易都市は？','神戸市'],
+        ['大阪府は過密を解消するために何を作った？','ニュータウン'],
+        ['1995年に近畿地方で起きた大地震は？','阪神・淡路大震災'],
+        ['ポートアイランドには24時間着陸することのできる何がある？','関西国際空港'],
+        ['奈良には平城京、京都には平安京が建てられていたことから何と呼ばれている？','古都'],
+        ['近畿地方は国宝重要文化財が一番多く登録されている地方だがその中でも多く登録されている県を上から3つ。、で区切って','京都府、奈良県、滋賀県'],
+        ['近畿地方の中で唯一世界遺産がない県は？','大阪府'],
+        ['世界遺産に登録されている清水寺、平等院がある県は？','京都府'],
+        ['世界遺産に登録されている法隆寺、東大寺、唐招提寺があるがある県は？','奈良県'],
+        ['京都市では西陣織、京友禅、清水焼などの伝統産業が盛んであるが、これらの工業品を何という？','伝統的工芸品'],
+      ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 20){
+          replay.textContent = "replay";
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

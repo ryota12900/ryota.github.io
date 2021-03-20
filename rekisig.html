@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise2s.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="rekisig.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['源氏物語（国風）','紫式部'],
+        ['枕草子（国風）','清少納言'],
+        ['平等院鳳凰堂（国風）','藤原道長'],
+        ['古今和歌集（国風）','紀貫之'],
+        ['平家物語（鎌倉）','琵琶法師'],
+        ['新古今和歌集（鎌倉）','藤原定家'],
+        ['徒然草（鎌倉）','兼好法師'],
+        ['東大寺南大門にある金剛力士像（鎌倉）','運慶・快慶'],
+        ['金閣寺（北山）','足利義満'],
+        ['能・狂言（北山）','観阿弥・世阿弥'],
+        ['銀閣（東山）','足利義政'],
+        ['水墨画（東山）','雪舟'],
+        ['唐獅子図屏風（桃山）','狩野永徳'],
+        ['かぶき踊り（桃山）','出雲の阿国'],
+        ['わび茶（桃山）','千利休'],
+        ['人形浄瑠璃（元禄）','近松門左衛門'],
+        ['浮世草子（元禄）','井原西鶴'],
+        ['浮世絵（元禄）','菱川師宣'],
+        ['装飾画（元禄）','尾形光琳'],
+        ['俳諧・奥の細道（元禄）','松尾芭蕉'],
+    ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 20){
+          replay.textContent = "replay";
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/stylee.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  </head>
+  <div id="back">
+    <a href="choise2s.html"><span class="material-icons">
+      keyboard_backspace
+      </span></a>
+  </div>
+  <div id="main">
+    <p id="question">test</p>
+    <div id="">
+      <input type="text" id="answer" value="">
+    </div>
+    <button id="btn">回答</button>
+    <div id="output"><p></p></div>
+    <a href="rekisia.html"><div id="replay"></div></a>
+  </div>
+
+  <script>
+    'use strict';
+
+    {
+　　　function setWord(){
+  const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+  quiz = wordGroup[0];
+  word = wordGroup[1];
+  question.textContent = quiz
+  output.textContent = "";
+  answer.value = "";
+  many++;
+}
+      function lisetAnswer(){
+        answer.value = "";
+        output.textContent = word;
+      }
+
+      const question = document.getElementById('question');
+      const answer = document.getElementById('answer');
+      const btn = document.getElementById('btn');
+      const output = document.getElementById('output');
+      const replay = document.getElementById('replay');
+
+      const words = [
+        ['中国に習ってはじめてつくられた年号は？（645）','大化'],
+        ['年号を100年単位で区切ったものは？','世紀'],
+        ['最も古い人類は約700年万年前にアフリカ大陸で生まれたとされるものは？','猿人'],
+        ['250万年前の氷河期に人類が石を打ち砕いてつくった石器は？','打製石器'],
+        ['狩りや採集がされていたり打製石器が使われていた時代は？','旧石器時代'],
+        ['今から２００万年前に出現した原人が使い始めたものは？','火'],
+        ['原人は狩りなどをするために何を発達させた？','言葉'],
+        ['今から20万年前に発生した人類の直接の先祖は？','新人'],
+        ['今から1万年ほど前氷期が終わり農耕や牧畜始まったこのころに作られた石器は？','磨製石器'],
+        ['磨製石器がつくられた時代は？','新石器時代'],
+        ['氷期が終わるとマンモスなどの大型動物などはどうなった？','絶滅'],
+        ['新石器時代につくられた食物を煮るための道具は？','土器'],
+        ['文明が起こる時に作られた道具を鉄器以外に一つ','青銅器'],
+        ['ナイル川流域で栄えた文明は？','エジプト文明'],
+        ['エジプト文明では巨大な王の墓がつくられたこれを何というか？','ピラミッド'],
+        ['エジプト文明では一年を365日とする何がつくられた？','太陽暦'],
+        ['エジプト文明では何文字がつくられた？','象形文字'],
+        ['メソポタミア文明、エジプト文明が成立したのは紀元前（ ）年','3000'],
+        ['チグリス川とユーフラテス川流域に起こった、ハンムラビ法典や60進法に関連深い古代文明は？','メソポタミア文明'],
+        ['メソポタミア文明でつくられた文字は？','楔形文字'],
+        ['メソポタミア文明でつくられ月の満ち欠けをもとにした暦は？','太陰暦'],
+        ['インダス川流域で紀元前2500年に起こった文明は？','インダス文明'],
+        ['インダス文明で有名な都市遺跡は？','モヘンジョ・ダロ'],
+        ['黄河付近で発達した文明は？','中国文明'],
+        ['中国文明では紀元前16世紀ごろに作られた国は？','殷'],
+        ['殷では青銅器がつくられたり（　）文字がつくられたりした','甲骨文字'],
+        ['殷を滅ばした周の力は弱まり戦乱の時代に孔子の説いた教えは？','儒学'],
+        ['紀元前3世紀に中国を統一した国は？','秦'],
+        ['周の後秦の始皇帝は北方の遊牧民の侵入を防ぐために何を築いた？','万里の長城'],
+        ['秦の後約四百年にわたり中国を支配した国は？','漢'],
+        ['漢の時代に開けた漢とローマ帝国をつなぐ交通路は？','シルクロード'],
+        ['シルクロードを通して漢から西へ送られたものは？','絹織物'],
+        ['シルクロードを通してローマ帝国などから漢へ送られたものは？','馬、ぶどう'],
+        ['シルクロードを通してインドから中国へ伝わったものは？','仏教'],
+        ['漢の支配を打ち破って朝鮮北部にかけた地域に強力な国家を築いた国は？','高句麗'],
+        ['ギリシャではアテネやスパルタなどの何と呼ばれる都市国家が建設されたか？','ポリス'],
+        ['アテネでは民会を中心に何が行われた？','民主政治'],
+        ['ムハンマドが始めたイスラム教の教えは何という経典に示されている？','コーラン'],
+        ['イスラム教は1日5回どこへ祈りをささげている？','メッカ'],
+        ['イスラム教、キリスト教、ユダヤ教の３つの宗教において共通として聖地とされていつ場所は？','エルサレム'],
+      ]
+
+      let word;
+      let quiz;
+      let many = 0;
+
+      setWord();
+      
+      btn.addEventListener("click",event =>{
+        var answer = document.getElementById("answer").value;
+        if(many === 20){
+          replay.textContent = "replay";
+        }
+        if(word == answer){
+          setWord();
+        }else{
+          lisetAnswer();
+        }
+      })
+
+    }
+  </script>
+</html>

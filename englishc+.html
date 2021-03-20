@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>英語</title>
+    <link rel="stylesheet" href="english.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body>
+    <div id="back">
+      <a href="choise1e.html"><span class="material-icons">
+        keyboard_backspace
+        </span></a>
+    </div>
+    <div class="quiz">
+      <div id="set">
+        <p id="question"></p>
+        <p id="target" class ="question"></p>
+      </div>
+      <a href="englishc+.html"><p id="result"></p></a>
+    </div>
+
+    <script>
+      'use strict';
+
+{
+  function setWord(){
+    const wordGroup = words.splice(Math.floor(Math.random() * words.length), 1)[0];
+    word = wordGroup[0];
+    quiz = wordGroup[1];
+    target.textContent = '';
+    question.textContent = quiz;
+    loc = 0;
+    many++;
+  }
+
+  const words = [
+  ['Sunday','日曜日'],
+  ['Monday','月曜日'],
+  ['Tuesday','火曜日'],
+  ['Wednesday','水曜日'],
+  ['Thursday','木曜日'],
+  ['Friday','金曜日'],
+  ['Saturday','土曜日'],
+  ]
+
+let word;
+let quiz;
+let loc = 0;
+let many = 0;
+
+  const target = document.getElementById('target');
+  const question = document.getElementById('question');
+
+  setWord();
+
+
+
+  document.addEventListener('keydown', e => {
+    if(e.key !== word[loc]){
+      return;
+    }
+
+    loc++;
+    target.textContent = target.textContent + e.key;
+    
+    if(many === 7){
+      if(loc === word.length){
+        const result = document.getElementById('result')
+        result.textContent = 'Replay?'
+        return;
+      }
+    }
+    
+    if(loc === word.length){
+      setWord();
+    }
+  });
+  
+}
+    </script>
+  </body>
+</html>

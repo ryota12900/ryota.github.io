@@ -1,0 +1,103 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>英語</title>
+    <link rel="stylesheet" href="english.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body>
+    <div id="back">
+      <a href="choise1e.html"><span class="material-icons">
+        keyboard_backspace
+        </span></a>
+    </div>
+    <div class="quiz">
+      <div id="set">
+        <p id="question"></p>
+        <p id="target" class ="question"></p>
+      </div>
+      <a href="englishk.html"><p id="result"></p></a>
+    </div>
+
+    <script>
+      'use strict';
+
+{
+  function setWord(){
+    word = words[many][0];
+    target.textContent = word;
+    loc = 0;
+  }
+  
+  function setQuiz(){
+    quiz = words[many][1];
+    question.textContent = quiz;
+    many ++;
+  }
+  const words = [
+  ['line','線'],
+  ['danger','危険'],
+  ['a lot of','たくさん'],
+  ['meter','メートル'],
+  ['thing','こと、物'],
+  ['name','名前'],
+  ['walk','散歩'],
+  ['work','仕事'],
+  ['season','季節'],
+  ['spring','春'],
+　['summer','夏'],
+  ['autumn','秋'],
+  ['winter','冬'],
+  ['minute','分'],
+  ['hour','時間'],
+  ['day','日'],
+　['week','週'],
+  ['month','月'],
+  ['year','年'],
+  ['seconds','秒'],
+]
+
+let word;
+let quiz;
+let loc = 0;
+let many = 0;
+
+  const target = document.getElementById('target');
+
+  setWord();
+
+  const question = document.getElementById('question')
+
+  setQuiz();
+
+
+
+  document.addEventListener('keydown', e => {
+    if(e.key !== word[loc]){
+      return;
+    }
+
+    loc++;
+    target.textContent = '_'.repeat(loc) + word.substring(loc);
+    
+    if(loc === word.length){
+      if(many === words.length){
+        const result = document.getElementById('result')
+        result.textContent = 'Replay?'
+        return;
+      }
+    }
+    
+    if(loc === word.length){
+      setWord();
+      setQuiz();
+    }
+  });
+}
+    </script>
+  </body>
+</html>
